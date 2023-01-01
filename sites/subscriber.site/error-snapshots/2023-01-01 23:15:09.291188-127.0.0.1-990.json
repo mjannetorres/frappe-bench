@@ -1,0 +1,616 @@
+{
+ "etype": "OperationalError",
+ "evalue": "OperationalError(1054, \"Unknown column 'tabAthlete.sport' in 'where clause'\")",
+ "exception": {
+  "args": [
+   40,
+   49,
+   48,
+   53,
+   52,
+   44,
+   32,
+   34,
+   85,
+   110,
+   107,
+   110,
+   111,
+   119,
+   110,
+   32,
+   99,
+   111,
+   108,
+   117,
+   109,
+   110,
+   32,
+   39,
+   116,
+   97,
+   98,
+   65,
+   116,
+   104,
+   108,
+   101,
+   116,
+   101,
+   46,
+   115,
+   112,
+   111,
+   114,
+   116,
+   39,
+   32,
+   105,
+   110,
+   32,
+   39,
+   119,
+   104,
+   101,
+   114,
+   101,
+   32,
+   99,
+   108,
+   97,
+   117,
+   115,
+   101,
+   39,
+   34,
+   41
+  ],
+  "errno": [
+   52,
+   48,
+   56,
+   52
+  ],
+  "with_traceback": [
+   60,
+   98,
+   117,
+   105,
+   108,
+   116,
+   45,
+   105,
+   110,
+   32,
+   109,
+   101,
+   116,
+   104,
+   111,
+   100,
+   32,
+   119,
+   105,
+   116,
+   104,
+   95,
+   116,
+   114,
+   97,
+   99,
+   101,
+   98,
+   97,
+   99,
+   107,
+   32,
+   111,
+   102,
+   32,
+   79,
+   112,
+   101,
+   114,
+   97,
+   116,
+   105,
+   111,
+   110,
+   97,
+   108,
+   69,
+   114,
+   114,
+   111,
+   114,
+   32,
+   111,
+   98,
+   106,
+   101,
+   99,
+   116,
+   62
+  ]
+ },
+ "frames": [
+  {
+   "call": "(request=<Request 'http://127.0.0.1:8001/api/method/run_doc_method' [POST]>)",
+   "dump": {
+    "frappe. api": "<module 'frappe.api' from '/home/janne/Projects/test-bench/apps/frappe/frappe/api.py'>",
+    "frappe.api. handle": "<function handle>",
+    "global frappe": "<module 'frappe' from '/home/janne/Projects/test-bench/apps/frappe/frappe/__init__.py'>",
+    "response": "None"
+   },
+   "file": "/home/janne/Projects/test-bench/apps/frappe/frappe/app.py",
+   "func": "application",
+   "lines": {
+    "54": "",
+    "55": "\t\telif request.path.startswith(\"/api/\"):",
+    "56": "\t\t\tresponse = frappe.api.handle()",
+    "57": "",
+    "58": "\t\telif request.path.startswith(\"/backups\"):"
+   },
+   "lnum": 56
+  },
+  {
+   "call": "()",
+   "dump": {
+    ").get_response": "undefined",
+    "call": "'method'",
+    "doctype": "'run_doc_method'",
+    "global _RESTAPIHandler": "<class 'frappe.api._RESTAPIHandler'>",
+    "name": "None"
+   },
+   "file": "/home/janne/Projects/test-bench/apps/frappe/frappe/api.py",
+   "func": "handle",
+   "lines": {
+    "51": "\t\tname = parts[3]",
+    "52": "",
+    "53": "\treturn _RESTAPIHandler(call, doctype, name).get_response()",
+    "54": "",
+    "55": ""
+   },
+   "lnum": 53
+  },
+  {
+   "call": "(self=<frappe.api._RESTAPIHandler object>)",
+   "dump": {
+    "self": "<frappe.api._RESTAPIHandler object>",
+    "self. handle_method": "<bound method _RESTAPIHandler.handle_method of <frappe.api._RESTAPIHandler object>>"
+   },
+   "file": "/home/janne/Projects/test-bench/apps/frappe/frappe/api.py",
+   "func": "get_response",
+   "lines": {
+    "67": "\t\tmatch self.call:",
+    "68": "\t\t\tcase \"method\":",
+    "69": "\t\t\t\treturn self.handle_method()",
+    "70": "\t\t\tcase \"resource\":",
+    "71": "\t\t\t\tself.handle_resource()"
+   },
+   "lnum": 69
+  },
+  {
+   "call": "(self=<frappe.api._RESTAPIHandler object>)",
+   "dump": {
+    "frappe. handler": "<module 'frappe.handler' from '/home/janne/Projects/test-bench/apps/frappe/frappe/handler.py'>",
+    "frappe.handler. handle": "<function handle>",
+    "global frappe": "<module 'frappe' from '/home/janne/Projects/test-bench/apps/frappe/frappe/__init__.py'>"
+   },
+   "file": "/home/janne/Projects/test-bench/apps/frappe/frappe/api.py",
+   "func": "handle_method",
+   "lines": {
+    "77": "\tdef handle_method(self):",
+    "78": "\t\tfrappe.local.form_dict.cmd = self.doctype",
+    "79": "\t\treturn frappe.handler.handle()",
+    "80": "",
+    "81": "\tdef handle_resource(self):"
+   },
+   "lnum": 79
+  },
+  {
+   "call": "()",
+   "dump": {
+    "cmd": "'run_doc_method'",
+    "data": "None",
+    "global execute_cmd": "<function execute_cmd>"
+   },
+   "file": "/home/janne/Projects/test-bench/apps/frappe/frappe/handler.py",
+   "func": "handle",
+   "lines": {
+    "46": "",
+    "47": "\tif cmd != \"login\":",
+    "48": "\t\tdata = execute_cmd(cmd)",
+    "49": "",
+    "50": "\t# data can be an empty string or list which are valid responses"
+   },
+   "lnum": 48
+  },
+  {
+   "call": "(cmd='run_doc_method', from_async=False)",
+   "dump": {
+    "frappe. call": "<function call>",
+    "frappe. form_dict": "{'docs': '{\"name\":\"1e8889a281\",\"owner\":\"Administ...od': 'get_all_athletes', 'cmd': 'run_doc_method'}",
+    "global frappe": "<module 'frappe' from '/home/janne/Projects/test-bench/apps/frappe/frappe/__init__.py'>",
+    "method": "<function run_doc_method>"
+   },
+   "file": "/home/janne/Projects/test-bench/apps/frappe/frappe/handler.py",
+   "func": "execute_cmd",
+   "lines": {
+    "84": "\t\tis_valid_http_method(method)",
+    "85": "",
+    "86": "\treturn frappe.call(method, **frappe.form_dict)",
+    "87": "",
+    "88": ""
+   },
+   "lnum": 86
+  },
+  {
+   "call": "(fn=<function run_doc_method>, *args=(), **kwargs={'cmd': 'run_doc_method', 'docs': '{\"name\":\"1e8889a281\",\"owner\":\"Administrator\",\"cr...tition\",\"doctype\":\"Participants\"}],\"__unsaved\":1}', 'method': 'get_all_athletes'})",
+   "dump": {
+    "args": "()",
+    "fn": "<function run_doc_method>",
+    "newargs": "{'docs': '{\"name\":\"1e8889a281\",\"owner\":\"Administrator\",\"cr...tition\",\"doctype\":\"Participants\"}],\"__unsaved\":1}', 'method': 'get_all_athletes'}"
+   },
+   "file": "/home/janne/Projects/test-bench/apps/frappe/frappe/__init__.py",
+   "func": "call",
+   "lines": {
+    "1594": "\tnewargs = get_newargs(fn, kwargs)",
+    "1595": "",
+    "1596": "\treturn fn(*args, **newargs)",
+    "1597": "",
+    "1598": ""
+   },
+   "lnum": 1596
+  },
+  {
+   "call": "(method='get_all_athletes', docs={'name': '1e8889a281', 'owner': 'Administrator',...on', 'doctype': 'Participants'}], '__unsaved': 1}, dt=None, dn=None, arg=None, args=None)",
+   "dump": {
+    "doc": "<Competition: 1e8889a281>",
+    "doc. run_method": "<bound method Document.run_method of <Competition: 1e8889a281>>",
+    "method": "'get_all_athletes'",
+    "response": "undefined"
+   },
+   "file": "/home/janne/Projects/test-bench/apps/frappe/frappe/handler.py",
+   "func": "run_doc_method",
+   "lines": {
+    "305": "",
+    "306": "\tif not fnargs or (len(fnargs) == 1 and fnargs[0] == \"self\"):",
+    "307": "\t\tresponse = doc.run_method(method)",
+    "308": "",
+    "309": "\telif \"args\" in fnargs or not isinstance(args, dict):"
+   },
+   "lnum": 307
+  },
+  {
+   "call": "(self=<Competition: 1e8889a281>, method='get_all_athletes', *args=(), **kwargs={})",
+   "dump": {
+    "Document. hook": "<function Document.hook>",
+    "args": "()",
+    "fn": "<function Document.run_method.<locals>.fn>",
+    "global Document": "<class 'frappe.model.document.Document'>",
+    "kwargs": "{}",
+    "out": "undefined",
+    "self": "<Competition: 1e8889a281>"
+   },
+   "file": "/home/janne/Projects/test-bench/apps/frappe/frappe/model/document.py",
+   "func": "run_method",
+   "lines": {
+    "918": "",
+    "919": "\t\tfn.__name__ = str(method)",
+    "920": "\t\tout = Document.hook(fn)(self, *args, **kwargs)",
+    "921": "",
+    "922": "\t\tself.run_notifications(method)"
+   },
+   "lnum": 920
+  },
+  {
+   "call": "(self=<Competition: 1e8889a281>, *args=(), **kwargs={})",
+   "dump": {
+    "args": "()",
+    "composed": "<function Document.hook.<locals>.compose.<locals>.runner>",
+    "kwargs": "{}",
+    "method": "'get_all_athletes'",
+    "self": "<Competition: 1e8889a281>"
+   },
+   "file": "/home/janne/Projects/test-bench/apps/frappe/frappe/model/document.py",
+   "func": "composer",
+   "lines": {
+    "1272": "",
+    "1273": "\t\t\tcomposed = compose(f, *hooks)",
+    "1274": "\t\t\treturn composed(self, method, *args, **kwargs)",
+    "1275": "",
+    "1276": "\t\treturn composer"
+   },
+   "lnum": 1274
+  },
+  {
+   "call": "(self=<Competition: 1e8889a281>, method='get_all_athletes', *args=(), **kwargs={})",
+   "dump": {
+    "add_to_return_value": "<function Document.hook.<locals>.add_to_return_value>",
+    "args": "()",
+    "fn": "<function Document.run_method.<locals>.fn>",
+    "kwargs": "{}",
+    "self": "<Competition: 1e8889a281>"
+   },
+   "file": "/home/janne/Projects/test-bench/apps/frappe/frappe/model/document.py",
+   "func": "runner",
+   "lines": {
+    "1254": "\t\tdef compose(fn, *hooks):",
+    "1255": "\t\t\tdef runner(self, method, *args, **kwargs):",
+    "1256": "\t\t\t\tadd_to_return_value(self, fn(self, *args, **kwargs))",
+    "1257": "\t\t\t\tfor f in hooks:",
+    "1258": "\t\t\t\t\tadd_to_return_value(self, f(self, method, *args, **kwargs))"
+   },
+   "lnum": 1256
+  },
+  {
+   "call": "(self=<Competition: 1e8889a281>, *args=(), **kwargs={})",
+   "dump": {
+    "args": "()",
+    "kwargs": "{}",
+    "method_object": "<bound method Competition.get_all_athletes of <Competition: 1e8889a281>>"
+   },
+   "file": "/home/janne/Projects/test-bench/apps/frappe/frappe/model/document.py",
+   "func": "fn",
+   "lines": {
+    "915": "\t\t\t# If method found in __dict__, expect it to be callable",
+    "916": "\t\t\tif method in self.__dict__ or callable(method_object):",
+    "917": "\t\t\t\treturn method_object(*args, **kwargs)",
+    "918": "",
+    "919": "\t\tfn.__name__ = str(method)"
+   },
+   "lnum": 917
+  },
+  {
+   "call": "(*args=(<Competition: 1e8889a281>,), **kwargs={})",
+   "dump": {
+    "args": "(<Competition: 1e8889a281>,)",
+    "func": "<function Competition.get_all_athletes>",
+    "kwargs": "{}"
+   },
+   "file": "/home/janne/Projects/test-bench/apps/frappe/frappe/utils/typing_validations.py",
+   "func": "wrapper",
+   "lines": {
+    "31": "\t\t\targs, kwargs = transform_parameter_types(func, args, kwargs)",
+    "32": "",
+    "33": "\t\treturn func(*args, **kwargs)",
+    "34": "",
+    "35": "\treturn wrapper"
+   },
+   "lnum": 33
+  },
+  {
+   "call": "(self=<Competition: 1e8889a281>)",
+   "dump": {
+    "\n. inner_join": "<pypika.terms.Field object>",
+    "\n. on": "<pypika.terms.Field object>",
+    "\n.select": "undefined",
+    "\n.where": "undefined",
+    ").run": "undefined",
+    "Athlete": "Table('tabAthlete')",
+    "Athlete. name": "<pypika.terms.Field object>",
+    "Athlete. sport": "<pypika.terms.Field object>",
+    "Participants": "Table('tabParticipants')",
+    "Participants. athlete": "<pypika.terms.Field object>",
+    "Participants. idx": "<pypika.terms.Field object>",
+    "Participants. name": "<pypika.terms.Field object>",
+    "Participants. team": "<pypika.terms.Field object>",
+    "as_dict": "undefined",
+    "frappe. qb": "<class 'frappe.query_builder.builder.MariaDB'>",
+    "frappe.qb. from_": "<bound method MariaDB.from_ of <class 'frappe.query_builder.builder.MariaDB'>>",
+    "global frappe": "<module 'frappe' from '/home/janne/Projects/test-bench/apps/frappe/frappe/__init__.py'>",
+    "rows": "undefined",
+    "self": "<Competition: 1e8889a281>",
+    "self. sport": "'Basketball'"
+   },
+   "file": "/home/janne/Projects/test-bench/apps/frappe/frappe/core/doctype/competition/competition.py",
+   "func": "get_all_athletes",
+   "lines": {
+    "45": "\t\tParticipants = frappe.qb.DocType('Participants')",
+    "46": "",
+    "47": "\t\trows = (frappe.qb.from_(Participants)",
+    "48": "\t\t\t.inner_join(Athlete)",
+    "49": "\t\t\t.on(Athlete.name == Participants.athlete)"
+   },
+   "lnum": 47
+  },
+  {
+   "call": "(query='SELECT `tabParticipants`.`athlete`,`tabParticipa...`.`athlete` WHERE `tabAthlete`.`sport`=%(param1)s', *args=(), **kwargs={'as_dict': True})",
+   "dump": {
+    "args": "()",
+    "frappe. db": "<frappe.database.mariadb.database.MariaDBDatabase object>",
+    "frappe.db. sql": "<bound method Database.sql of <frappe.database.mariadb.database.MariaDBDatabase object>>",
+    "global frappe": "<module 'frappe' from '/home/janne/Projects/test-bench/apps/frappe/frappe/__init__.py'>",
+    "kwargs": "{'as_dict': True}",
+    "params": "{'param1': 'Basketball'}",
+    "query": "'SELECT `tabParticipants`.`athlete`,`tabParticipa...`.`athlete` WHERE `tabAthlete`.`sport`=%(param1)s'"
+   },
+   "file": "/home/janne/Projects/test-bench/apps/frappe/frappe/query_builder/utils.py",
+   "func": "execute_query",
+   "lines": {
+    "84": "\tdef execute_query(query, *args, **kwargs):",
+    "85": "\t\tquery, params = prepare_query(query)",
+    "86": "\t\treturn frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep",
+    "87": "",
+    "88": "\tdef prepare_query(query):"
+   },
+   "lnum": 86
+  },
+  {
+   "call": "(self=<frappe.database.mariadb.database.MariaDBDatabase object>, query='SELECT `tabParticipants`.`athlete`,`tabParticipa...`.`athlete` WHERE `tabAthlete`.`sport`=%(param1)s', values={'param1': 'Basketball'}, as_dict=True, as_list=0, debug=False, ignore_ddl=0, auto_commit=0, update=None, explain=False, run=True, pluck=False)",
+   "dump": {
+    "query": "'SELECT `tabParticipants`.`athlete`,`tabParticipa...`.`athlete` WHERE `tabAthlete`.`sport`=%(param1)s'",
+    "self": "<frappe.database.mariadb.database.MariaDBDatabase object>",
+    "self. _cursor": "<pymysql.cursors.Cursor object>",
+    "self._cursor. execute": "<bound method Cursor.execute of <pymysql.cursors.Cursor object>>",
+    "values": "{'param1': 'Basketball'}"
+   },
+   "file": "/home/janne/Projects/test-bench/apps/frappe/frappe/database/database.py",
+   "func": "sql",
+   "lines": {
+    "219": "",
+    "220": "\t\ttry:",
+    "221": "\t\t\tself._cursor.execute(query, values)",
+    "222": "\t\texcept Exception as e:",
+    "223": "\t\t\tif self.is_syntax_error(e):"
+   },
+   "lnum": 221
+  },
+  {
+   "call": "(self=<pymysql.cursors.Cursor object>, query=\"SELECT `tabParticipants`.`athlete`,`tabParticipa...`athlete` WHERE `tabAthlete`.`sport`='Basketball'\", args={'param1': 'Basketball'})",
+   "dump": {
+    "query": "\"SELECT `tabParticipants`.`athlete`,`tabParticipa...`athlete` WHERE `tabAthlete`.`sport`='Basketball'\"",
+    "result": "undefined",
+    "self": "<pymysql.cursors.Cursor object>",
+    "self. _query": "<bound method Cursor._query of <pymysql.cursors.Cursor object>>"
+   },
+   "file": "/home/janne/Projects/test-bench/env/lib/python3.10/site-packages/pymysql/cursors.py",
+   "func": "execute",
+   "lines": {
+    "146": "        query = self.mogrify(query, args)",
+    "147": "",
+    "148": "        result = self._query(query)",
+    "149": "        self._executed = query",
+    "150": "        return result"
+   },
+   "lnum": 148
+  },
+  {
+   "call": "(self=<pymysql.cursors.Cursor object>, q=\"SELECT `tabParticipants`.`athlete`,`tabParticipa...`athlete` WHERE `tabAthlete`.`sport`='Basketball'\")",
+   "dump": {
+    "conn": "<pymysql.connections.Connection object>",
+    "conn. query": "<bound method Connection.query of <pymysql.connections.Connection object>>",
+    "q": "\"SELECT `tabParticipants`.`athlete`,`tabParticipa...`athlete` WHERE `tabAthlete`.`sport`='Basketball'\""
+   },
+   "file": "/home/janne/Projects/test-bench/env/lib/python3.10/site-packages/pymysql/cursors.py",
+   "func": "_query",
+   "lines": {
+    "308": "        self._last_executed = q",
+    "309": "        self._clear_result()",
+    "310": "        conn.query(q)",
+    "311": "        self._do_get_result()",
+    "312": "        return self.rowcount"
+   },
+   "lnum": 310
+  },
+  {
+   "call": "(self=<pymysql.connections.Connection object>, sql=b\"SELECT `tabParticipants`.`athlete`,`tabPartici...athlete` WHERE `tabAthlete`.`sport`='Basketball'\", unbuffered=False)",
+   "dump": {
+    "self": "<pymysql.connections.Connection object>",
+    "self. _affected_rows": "1",
+    "self. _read_query_result": "<bound method Connection._read_query_result of <pymysql.connections.Connection object>>",
+    "unbuffered": "False"
+   },
+   "file": "/home/janne/Projects/test-bench/env/lib/python3.10/site-packages/pymysql/connections.py",
+   "func": "query",
+   "lines": {
+    "546": "            sql = sql.encode(self.encoding, \"surrogateescape\")",
+    "547": "        self._execute_command(COMMAND.COM_QUERY, sql)",
+    "548": "        self._affected_rows = self._read_query_result(unbuffered=unbuffered)",
+    "549": "        return self._affected_rows",
+    "550": ""
+   },
+   "lnum": 548
+  },
+  {
+   "call": "(self=<pymysql.connections.Connection object>, unbuffered=False)",
+   "dump": {
+    "result": "<pymysql.connections.MySQLResult object>",
+    "result. read": "<bound method MySQLResult.read of <pymysql.connections.MySQLResult object>>"
+   },
+   "file": "/home/janne/Projects/test-bench/env/lib/python3.10/site-packages/pymysql/connections.py",
+   "func": "_read_query_result",
+   "lines": {
+    "773": "        else:",
+    "774": "            result = MySQLResult(self)",
+    "775": "            result.read()",
+    "776": "        self._result = result",
+    "777": "        if result.server_status is not None:"
+   },
+   "lnum": 775
+  },
+  {
+   "call": "(self=<pymysql.connections.MySQLResult object>)",
+   "dump": {
+    "first_packet": "undefined",
+    "self": "<pymysql.connections.MySQLResult object>",
+    "self. connection": "None",
+    "self.connection._read_packet": "undefined"
+   },
+   "file": "/home/janne/Projects/test-bench/env/lib/python3.10/site-packages/pymysql/connections.py",
+   "func": "read",
+   "lines": {
+    "1154": "    def read(self):",
+    "1155": "        try:",
+    "1156": "            first_packet = self.connection._read_packet()",
+    "1157": "",
+    "1158": "            if first_packet.is_ok_packet():"
+   },
+   "lnum": 1156
+  },
+  {
+   "call": "(self=<pymysql.connections.Connection object>, packet_type=<class 'pymysql.protocol.MysqlPacket'>)",
+   "dump": {
+    "packet": "<pymysql.protocol.MysqlPacket object>",
+    "packet. raise_for_error": "<bound method MysqlPacket.raise_for_error of <pymysql.protocol.MysqlPacket object>>"
+   },
+   "file": "/home/janne/Projects/test-bench/env/lib/python3.10/site-packages/pymysql/connections.py",
+   "func": "_read_packet",
+   "lines": {
+    "723": "            if self._result is not None and self._result.unbuffered_active is True:",
+    "724": "                self._result.unbuffered_active = False",
+    "725": "            packet.raise_for_error()",
+    "726": "        return packet",
+    "727": ""
+   },
+   "lnum": 725
+  },
+  {
+   "call": "(self=<pymysql.protocol.MysqlPacket object>)",
+   "dump": {
+    "err. raise_mysql_exception": "<function raise_mysql_exception>",
+    "global err": "<module 'pymysql.err' from '/home/janne/Projects...env/lib/python3.10/site-packages/pymysql/err.py'>",
+    "self": "<pymysql.protocol.MysqlPacket object>",
+    "self. _data": "b\"\\xff\\x1e\\x04#42S22Unknown column 'tabAthlete.sport' in 'where clause'\""
+   },
+   "file": "/home/janne/Projects/test-bench/env/lib/python3.10/site-packages/pymysql/protocol.py",
+   "func": "raise_for_error",
+   "lines": {
+    "219": "        if DEBUG:",
+    "220": "            print(\"errno =\", errno)",
+    "221": "        err.raise_mysql_exception(self._data)",
+    "222": "",
+    "223": "    def dump(self):"
+   },
+   "lnum": 221
+  },
+  {
+   "call": "(data=b\"\\xff\\x1e\\x04#42S22Unknown column 'tabAthlete.sport' in 'where clause'\")",
+   "dump": {
+    "errno": "1054",
+    "errorclass": "<class 'pymysql.err.OperationalError'>",
+    "errval": "\"Unknown column 'tabAthlete.sport' in 'where clause'\""
+   },
+   "file": "/home/janne/Projects/test-bench/env/lib/python3.10/site-packages/pymysql/err.py",
+   "func": "raise_mysql_exception",
+   "lines": {
+    "139": "    errval = data[9:].decode(\"utf-8\", \"replace\")",
+    "140": "    errorclass = error_map.get(errno)",
+    "141": "    if errorclass is None:",
+    "142": "        errorclass = InternalError if errno < 1000 else OperationalError",
+    "143": "    raise errorclass(errno, errval)"
+   },
+   "lnum": 143
+  }
+ ],
+ "locals": {
+  "data": "b\"\\xff\\x1e\\x04#42S22Unknown column 'tabAthlete.sport' in 'where clause'\"",
+  "errno": "1054",
+  "errorclass": "<class 'pymysql.err.OperationalError'>",
+  "errval": "Unknown column 'tabAthlete.sport' in 'where clause'"
+ },
+ "pyver": "Python 3.10.6: /home/janne/Projects/test-bench/env/bin/python (prefix: /home/janne/Projects/test-bench/env)",
+ "timestamp": "2023-01-01 23:15:09.291403",
+ "traceback": "Traceback (most recent call last):\n  File \"/home/janne/Projects/test-bench/apps/frappe/frappe/app.py\", line 56, in application\n    response = frappe.api.handle()\n  File \"/home/janne/Projects/test-bench/apps/frappe/frappe/api.py\", line 53, in handle\n    return _RESTAPIHandler(call, doctype, name).get_response()\n  File \"/home/janne/Projects/test-bench/apps/frappe/frappe/api.py\", line 69, in get_response\n    return self.handle_method()\n  File \"/home/janne/Projects/test-bench/apps/frappe/frappe/api.py\", line 79, in handle_method\n    return frappe.handler.handle()\n  File \"/home/janne/Projects/test-bench/apps/frappe/frappe/handler.py\", line 48, in handle\n    data = execute_cmd(cmd)\n  File \"/home/janne/Projects/test-bench/apps/frappe/frappe/handler.py\", line 86, in execute_cmd\n    return frappe.call(method, **frappe.form_dict)\n  File \"/home/janne/Projects/test-bench/apps/frappe/frappe/__init__.py\", line 1596, in call\n    return fn(*args, **newargs)\n  File \"/home/janne/Projects/test-bench/apps/frappe/frappe/handler.py\", line 307, in run_doc_method\n    response = doc.run_method(method)\n  File \"/home/janne/Projects/test-bench/apps/frappe/frappe/model/document.py\", line 920, in run_method\n    out = Document.hook(fn)(self, *args, **kwargs)\n  File \"/home/janne/Projects/test-bench/apps/frappe/frappe/model/document.py\", line 1274, in composer\n    return composed(self, method, *args, **kwargs)\n  File \"/home/janne/Projects/test-bench/apps/frappe/frappe/model/document.py\", line 1256, in runner\n    add_to_return_value(self, fn(self, *args, **kwargs))\n  File \"/home/janne/Projects/test-bench/apps/frappe/frappe/model/document.py\", line 917, in fn\n    return method_object(*args, **kwargs)\n  File \"/home/janne/Projects/test-bench/apps/frappe/frappe/utils/typing_validations.py\", line 33, in wrapper\n    return func(*args, **kwargs)\n  File \"/home/janne/Projects/test-bench/apps/frappe/frappe/core/doctype/competition/competition.py\", line 47, in get_all_athletes\n    rows = (frappe.qb.from_(Participants)\n  File \"/home/janne/Projects/test-bench/apps/frappe/frappe/query_builder/utils.py\", line 86, in execute_query\n    return frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep\n  File \"/home/janne/Projects/test-bench/apps/frappe/frappe/database/database.py\", line 221, in sql\n    self._cursor.execute(query, values)\n  File \"/home/janne/Projects/test-bench/env/lib/python3.10/site-packages/pymysql/cursors.py\", line 148, in execute\n    result = self._query(query)\n  File \"/home/janne/Projects/test-bench/env/lib/python3.10/site-packages/pymysql/cursors.py\", line 310, in _query\n    conn.query(q)\n  File \"/home/janne/Projects/test-bench/env/lib/python3.10/site-packages/pymysql/connections.py\", line 548, in query\n    self._affected_rows = self._read_query_result(unbuffered=unbuffered)\n  File \"/home/janne/Projects/test-bench/env/lib/python3.10/site-packages/pymysql/connections.py\", line 775, in _read_query_result\n    result.read()\n  File \"/home/janne/Projects/test-bench/env/lib/python3.10/site-packages/pymysql/connections.py\", line 1156, in read\n    first_packet = self.connection._read_packet()\n  File \"/home/janne/Projects/test-bench/env/lib/python3.10/site-packages/pymysql/connections.py\", line 725, in _read_packet\n    packet.raise_for_error()\n  File \"/home/janne/Projects/test-bench/env/lib/python3.10/site-packages/pymysql/protocol.py\", line 221, in raise_for_error\n    err.raise_mysql_exception(self._data)\n  File \"/home/janne/Projects/test-bench/env/lib/python3.10/site-packages/pymysql/err.py\", line 143, in raise_mysql_exception\n    raise errorclass(errno, errval)\npymysql.err.OperationalError: (1054, \"Unknown column 'tabAthlete.sport' in 'where clause'\")\n"
+}
