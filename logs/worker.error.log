@@ -643,3 +643,11 @@ redis.exceptions.ConnectionError: Error 111 connecting to localhost:11001. Conne
   from distutils.version import LooseVersion
 /home/janne/Projects/test-bench/apps/frappe/frappe/utils/pdf.py:7: DeprecationWarning: The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives
   from distutils.version import LooseVersion
+/home/janne/Projects/test-bench/apps/frappe/frappe/utils/pdf.py:7: DeprecationWarning: The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives
+  from distutils.version import LooseVersion
+/home/janne/Projects/test-bench/apps/frappe/frappe/utils/pdf.py:7: DeprecationWarning: The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives
+  from distutils.version import LooseVersion
+/home/janne/Projects/test-bench/apps/frappe/frappe/utils/pdf.py:7: DeprecationWarning: The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives
+  from distutils.version import LooseVersion
+/home/janne/Projects/test-bench/apps/frappe/frappe/utils/pdf.py:7: DeprecationWarning: The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives
+  from distutils.version import LooseVersion
