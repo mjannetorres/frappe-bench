@@ -653,3 +653,15 @@ redis.exceptions.ConnectionError: Error 111 connecting to localhost:11001. Conne
   from distutils.version import LooseVersion
 /home/janne/Projects/test-bench/apps/frappe/frappe/utils/pdf.py:7: DeprecationWarning: The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives
   from distutils.version import LooseVersion
+/home/janne/Projects/test-bench/apps/frappe/frappe/utils/pdf.py:7: DeprecationWarning: The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives
+  from distutils.version import LooseVersion
+/home/janne/Projects/test-bench/apps/frappe/frappe/utils/pdf.py:7: DeprecationWarning: The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives
+  from distutils.version import LooseVersion
+/home/janne/Projects/test-bench/apps/frappe/frappe/utils/pdf.py:7: DeprecationWarning: The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives
+  from distutils.version import LooseVersion
+/home/janne/Projects/test-bench/apps/frappe/frappe/utils/pdf.py:7: DeprecationWarning: The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives
+  from distutils.version import LooseVersion
+/home/janne/Projects/test-bench/apps/frappe/frappe/utils/pdf.py:7: DeprecationWarning: The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives
+  from distutils.version import LooseVersion
+/home/janne/Projects/test-bench/env/lib/python3.10/site-packages/botocore/httpsession.py:19: DeprecationWarning: 'urllib3.contrib.pyopenssl' module is deprecated and will be removed in a future release of urllib3 2.x. Read more in this issue: https://github.com/urllib3/urllib3/issues/2680
+  from urllib3.contrib.pyopenssl import orig_util_SSLContext as SSLContext

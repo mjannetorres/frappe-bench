@@ -5,3 +5,9 @@ Backup Summary for subscriber.site at 2023-01-01 18:00:03.558019
 Config  : ./subscriber.site/private/backups/20230101_180002-subscriber_site-site_config_backup.json 116.0B
 Database: ./subscriber.site/private/backups/20230101_180002-subscriber_site-database.sql.gz         261.9KiB
 Backup for Site subscriber.site has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _5025d6b94bfbc1db -p********** _5025d6b94bfbc1db -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./subscriber.site/private/backups/20230102_000002-subscriber_site-database.sql.gz
+
+Backup Summary for subscriber.site at 2023-01-02 00:00:03.473285
+Config  : ./subscriber.site/private/backups/20230102_000002-subscriber_site-site_config_backup.json 116.0B
+Database: ./subscriber.site/private/backups/20230102_000002-subscriber_site-database.sql.gz         285.9KiB
+Backup for Site subscriber.site has been successfully completed

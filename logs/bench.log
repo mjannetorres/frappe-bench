@@ -106,3 +106,4 @@
 2023-01-01 20:35:18,690 INFO /usr/local/bin/bench serve --port 8001
 2023-01-01 20:35:18,711 INFO /usr/local/bin/bench schedule
 2023-01-01 20:35:18,781 INFO /usr/local/bin/bench watch
+2023-01-02 00:00:01,549 INFO /usr/local/bin/bench --verbose --site all backup
